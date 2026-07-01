@@ -1,0 +1,1657 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BizMall — Buy & Sell Businesses</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="logo">biz<span>mall</span></div>
+      <span class="nav-explore">Explore ▾</span>
+      <div class="search-wrap">
+        <svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <circle cx="11" cy="11" r="7.5" stroke="#1c1d1f" stroke-width="2" />
+          <line
+            x1="17"
+            y1="17"
+            x2="22"
+            y2="22"
+            stroke="#1c1d1f"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+        <input type="text" placeholder="Search businesses for sale…" />
+      </div>
+      <div class="nav-end">
+        <a href="#listings">New Listings</a>
+        <a href="#featured">Featured</a>
+        <a href="#contact" class="btn btn-outline" id="contactBtn">Contact</a>
+        <a href="#" class="btn btn-solid">Sell a Business</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <!-- MOBILE NAV DRAWER -->
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="#listings" onclick="closeMobileNav()">New Listings</a>
+      <a href="#featured" onclick="closeMobileNav()">Featured Business</a>
+      <a href="#our-business" onclick="closeMobileNav()">Our Business</a>
+      <div class="mob-btns">
+        <a href="#contact" class="btn btn-outline" onclick="closeMobileNav()"
+          >Contact Us</a
+        >
+        <a href="#" class="btn btn-solid">Sell a Business</a>
+      </div>
+    </nav>
+
+    <!-- HERO SLIDESHOW -->
+    <div class="hero" id="hero">
+      <div class="slide active">
+        <img src="https://picsum.photos/id/1060/1400/600" alt="" />
+        <div class="slide-content">
+          <div class="slide-eyebrow">Browse opportunities</div>
+          <h1>Find your next business — ready to run from day one</h1>
+          <p>
+            Thousands of verified listings across every industry, with real
+            financials attached.
+          </p>
+          <a href="#listings" class="btn btn-purple">Browse listings</a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="https://picsum.photos/id/1048/1400/600" alt="" />
+        <div class="slide-content">
+          <div class="slide-eyebrow">Sell smarter</div>
+          <h1>Turn your business into someone's next big move</h1>
+          <p>List in front of serious, vetted buyers who are ready to act.</p>
+          <a href="#" class="btn btn-purple">List your business</a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="https://picsum.photos/id/1015/1400/600" alt="" />
+        <div class="slide-content">
+          <div class="slide-eyebrow">Featured this week</div>
+          <h1>Hand-picked, high-potential businesses vetted by our team</h1>
+          <p>
+            Every featured listing has been reviewed for accuracy and
+            opportunity.
+          </p>
+          <a href="#featured" class="btn btn-purple">See featured</a>
+        </div>
+      </div>
+      <button class="hero-btn prev" onclick="heroSlide(-1)">&#8249;</button>
+      <button class="hero-btn next" onclick="heroSlide(1)">&#8250;</button>
+      <div class="hero-dots" id="heroDots"></div>
+    </div>
+
+    <!-- ── NEW LISTINGS (carousel, with prices) ── -->
+    <div class="section" id="listings">
+      <div class="sec-hd"><h2>New listings</h2></div>
+      <p class="sec-sub">Fresh businesses just added to BizMall</p>
+
+      <div class="carousel-outer" id="nlOuter">
+        <button class="car-btn left" id="nlPrev" onclick="carMove('nl', -1)">
+          &#8249;
+        </button>
+        <div class="carousel-track-clip">
+          <div class="carousel-track" id="nlTrack">
+            <div
+              class="biz-card"
+              data-cat="food"
+              data-title="Downtown Specialty Coffee Shop"
+              data-location="Nairobi CBD"
+              data-est="2019"
+              data-staff="4 employees"
+              data-revenue="Ugx 3.2M/yr"
+              data-profit="Ugx 960K/yr"
+              data-price="Ugx 18,500,000"
+              data-orig=""
+              data-h1="Prime CBD location with high daily foot traffic"
+              data-h2="Loyal repeat customer base of 400+ regulars"
+              data-h3="Full equipment & fittings included in sale price"
+              data-h4="Established supplier relationships already in place"
+              data-badge="new"
+              data-badge-text="New listing"
+              data-rating="4.7"
+              data-reviews="38"
+            >
+              <div class="biz-thumb-wrap">
+                <img
+                  class="biz-thumb"
+                  src="https://picsum.photos/id/292/400/300"
+                  alt="Coffee Shop"
+                />
+              </div>
+              <div class="biz-title">
+                Downtown Specialty Coffee Shop with Loyal Customer Base
+              </div>
+              <div class="biz-provider">Nairobi CBD · Est. 2019</div>
+              <div class="biz-badges">
+                <span class="badge new">New listing</span>
+                <span class="star-pill"><span class="s">★</span>4.7</span>
+                <span class="rev-pill">38 reviews</span>
+              </div>
+              <div class="biz-price">Ugx 18,500,000</div>
+            </div>
+
+            <div
+              class="biz-card"
+              data-cat="ecommerce"
+              data-title="Profitable DTC Skincare Brand"
+              data-location="Online"
+              data-est="2021"
+              data-staff="Remote team of 3"
+              data-revenue="Ugx 8.4M/yr"
+              data-profit="Ugx 2.1M/yr"
+              data-price="Ugx 24,000,000"
+              data-orig=""
+              data-h1="3,000+ monthly orders across Shopify & social"
+              data-h2="Strong brand identity with 45K Instagram followers"
+              data-h3="Fully automated fulfilment & supplier contracts"
+              data-h4="Transferable domain, social accounts & brand assets"
+              data-badge="hot"
+              data-badge-text="Hot &amp; New"
+              data-rating="4.9"
+              data-reviews="52"
+            >
+              <div class="biz-thumb-wrap">
+                <img
+                  class="biz-thumb"
+                  src="https://picsum.photos/id/180/400/300"
+                  alt="Skincare Brand"
+                />
+              </div>
+              <div class="biz-title">
+                Profitable DTC Skincare Brand — Shopify Store, 3k Monthly Orders
+              </div>
+              <div class="biz-provider">Online · Est. 2021</div>
+              <div class="biz-badges">
+                <span class="badge hot">Hot &amp; New</span>
+                <span class="star-pill"><span class="s">★</span>4.9</span>
+                <span class="rev-pill">52 reviews</span>
+              </div>
+              <div class="biz-price">Ugx 24,000,000</div>
+            </div>
+
+            <div
+              class="biz-card"
+              data-cat="services"
+              data-title="Residential Cleaning Franchise"
+              data-location="Karen, Nairobi"
+              data-est="2018"
+              data-staff="6 employees"
+              data-revenue="Ugx 2.8M/yr"
+              data-profit="Ugx 700K/yr"
+              data-price="Ugx 9,500,000"
+              data-orig=""
+              data-h1="3 active routes with recurring weekly contracts"
+              data-h2="Franchise brand & training support included"
+              data-h3="All cleaning equipment & van included in sale"
+              data-h4="90% client retention rate over 3 years"
+              data-badge="new"
+              data-badge-text="New listing"
+              data-rating="4.5"
+              data-reviews="21"
+            >
+              <div class="biz-thumb-wrap">
+                <img
+                  class="biz-thumb"
+                  src="https://picsum.photos/id/1011/400/300"
+                  alt="Cleaning Franchise"
+                />
+              </div>
+              <div class="biz-title">
+                Residential Cleaning Franchise — 3 Active Routes, Recurring
+                Revenue
+              </div>
+              <div class="biz-provider">Karen · Est. 2018</div>
+              <div class="biz-badges">
+                <span class="badge new">New listing</span>
+                <span class="star-pill"><span class="s">★</span>4.5</span>
+                <span class="rev-pill">21 reviews</span>
+              </div>
+              <div class="biz-price">Ugx 9,500,000</div>
+            </div>
+
+            <div
+              class="biz-card"
+              data-cat="retail"
+              data-title="Boutique Plant & Home Décor Storefront"
+              data-location="Westlands, Nairobi"
+              data-est="2020"
+              data-staff="2 employees"
+              data-revenue="Ugx 1.9M/yr"
+              data-profit="Ugx 540K/yr"
+              data-price="Ugx 7,250,000"
+              data-orig=""
+              data-h1="Prime Westlands walk-in location with low rent"
+              data-h2="Curated supplier network & existing stock included"
+              data-h3="Active Instagram shop with 12K followers"
+              data-h4="Simple handover — owner willing to train buyer"
+              data-badge="new"
+              data-badge-text="New listing"
+              data-rating="4.6"
+              data-reviews="17"
+            >
+              <div class="biz-thumb-wrap">
+                <img
+                  class="biz-thumb"
+                  src="https://picsum.photos/id/96/400/300"
+                  alt="Plant Shop"
+                />
+              </div>
+              <div class="biz-title">
+                Boutique Plant & Home Décor Storefront, Prime Westlands Location
+              </div>
+              <div class="biz-provider">Westlands · Est. 2020</div>
+              <div class="biz-badges">
+                <span class="badge new">New listing</span>
+                <span class="star-pill"><span class="s">★</span>4.6</span>
+                <span class="rev-pill">17 reviews</span>
+              </div>
+              <div class="biz-price">Ugx 7,250,000</div>
+            </div>
+
+            <div
+              class="biz-card"
+              data-cat="tech"
+              data-title="B2B SaaS Inventory Management Tool"
+              data-location="Online"
+              data-est="2020"
+              data-staff="Remote team of 5"
+              data-revenue="Ugx 14.4M/yr"
+              data-profit="Ugx 5.2M/yr"
+              data-price="Ugx 89,000,000"
+              data-orig=""
+              data-h1="MRR growing at 8% month-on-month consistently"
+              data-h2="120+ paying restaurant & retail clients"
+              data-h3="Clean codebase with full technical documentation"
+              data-h4="Low churn rate of under 3% monthly"
+              data-badge="hot"
+              data-badge-text="Hot &amp; New"
+              data-rating="4.8"
+              data-reviews="44"
+            >
+              <div class="biz-thumb-wrap">
+                <img
+                  class="biz-thumb"
+                  src="https://picsum.photos/id/431/400/300"
+                  alt="SaaS Tool"
+                />
+              </div>
+              <div class="biz-title">
+                B2B SaaS Inventory Management Tool — MRR Growing 8%/mo
+              </div>
+              <div class="biz-provider">Online · Est. 2020</div>
+              <div class="biz-badges">
+                <span class="badge hot">Hot &amp; New</span>
+                <span class="star-pill"><span class="s">★</span>4.8</span>
+                <span class="rev-pill">44 reviews</span>
+              </div>
+              <div class="biz-price">Ugx 89,000,000</div>
+            </div>
+
+            <div
+              class="biz-card"
+              data-cat="food"
+              data-title="Established Restaurant, Kilimani"
+              data-location="Kilimani, Nairobi"
+              data-est="2017"
+              data-staff="8 employees"
+              data-revenue="Ugx 5.6M/yr"
+              data-profit="Ugx 1.1M/yr"
+              data-price="Ugx 32,000,000"
+              data-orig=""
+              data-h1="Fully equipped commercial kitchen — no extra CAPEX"
+              data-h2="Established supplier & delivery relationships"
+              data-h3="High footfall location near major offices & malls"
+              data-h4="Alcohol licence and all permits already in place"
+              data-badge="new"
+              data-badge-text="New listing"
+              data-rating="4.4"
+              data-reviews="29"
+            >
+              <div class="biz-thumb-wrap">
+                <img
+                  class="biz-thumb"
+                  src="https://picsum.photos/id/102/400/300"
+                  alt="Restaurant"
+                />
+              </div>
+              <div class="biz-title">
+                Established Restaurant with Fully Equipped Kitchen, High
+                Footfall Area
+              </div>
+              <div class="biz-provider">Kilimani · Est. 2017</div>
+              <div class="biz-badges">
+                <span class="badge new">New listing</span>
+                <span class="star-pill"><span class="s">★</span>4.4</span>
+                <span class="rev-pill">29 reviews</span>
+              </div>
+              <div class="biz-price">Ugx 32,000,000</div>
+            </div>
+          </div>
+        </div>
+        <button class="car-btn right" id="nlNext" onclick="carMove('nl', 1)">
+          &#8250;
+        </button>
+      </div>
+      <a href="#" class="show-all">Show all new listings →</a>
+    </div>
+
+    <div class="section" id="featured">
+      <div class="sec-hd"><h2>Featured Businesses</h2></div>
+      <p class="sec-sub">
+        Hand-picked businesses with exceptional growth potential
+      </p>
+
+      <div class="carousel-outer" id="fbOuter">
+        <button class="car-btn left" id="fbPrev" onclick="carMove('fb', -1)">
+          &#8249;
+        </button>
+
+        <div class="carousel-track-clip">
+          <div class="carousel-track" id="fbTrack">
+            <div
+              class="biz-card"
+              data-cat="food"
+              data-title="Luxury Rooftop Restaurant & Lounge"
+              data-location="Westlands, Nairobi"
+              data-est="2018"
+              data-staff="18 employees"
+              data-revenue="Ugx 15.8M/yr"
+              data-profit="Ugx 4.9M/yr"
+              data-price="Ugx 95,000,000"
+              data-orig=""
+              data-h1="Prime rooftop location with premium clientele"
+              data-h2="Fully equipped kitchen and bar"
+              data-h3="Strong event and corporate bookings"
+              data-h4="Excellent brand reputation with repeat customers"
+              data-badge="featured"
+              data-badge-text="Featured"
+              data-rating="4.9"
+              data-reviews="126"
+            >
+              <div class="biz-thumb-wrap">
+                <img
+                  class="biz-thumb"
+                  src="https://picsum.photos/id/1080/400/300"
+                  alt="Restaurant"
+                />
+              </div>
+
+              <div class="biz-title">Luxury Rooftop Restaurant & Lounge</div>
+
+              <div class="biz-provider">Westlands · Est. 2018</div>
+
+              <div class="biz-badges">
+                <span class="badge featured">Featured</span>
+                <span class="star-pill"><span class="s">★</span>4.9</span>
+                <span class="rev-pill">126 reviews</span>
+              </div>
+
+              <div class="biz-price">Ugx 95,000,000</div>
+            </div>
+
+            <div
+              class="biz-card"
+              data-cat="tech"
+              data-title="Fast Growing Software Company"
+              data-location="Online"
+              data-est="2020"
+              data-staff="12 employees"
+              data-revenue="Ugx 32.4M/yr"
+              data-profit="Ugx 12.8M/yr"
+              data-price="Ugx 180,000,000"
+              data-orig=""
+              data-h1="Monthly recurring revenue continues to grow"
+              data-h2="250+ paying business clients"
+              data-h3="Complete ownership of source code"
+              data-h4="International customer base"
+              data-badge="featured"
+              data-badge-text="Featured"
+              data-rating="5.0"
+              data-reviews="84"
+            >
+              <div class="biz-thumb-wrap">
+                <img
+                  class="biz-thumb"
+                  src="https://picsum.photos/id/48/400/300"
+                  alt="Software Company"
+                />
+              </div>
+
+              <div class="biz-title">Fast Growing SaaS Software Company</div>
+
+              <div class="biz-provider">Online · Est. 2020</div>
+
+              <div class="biz-badges">
+                <span class="badge featured">Featured</span>
+                <span class="star-pill"><span class="s">★</span>5.0</span>
+                <span class="rev-pill">84 reviews</span>
+              </div>
+
+              <div class="biz-price">Ugx 180,000,000</div>
+            </div>
+
+            <div
+              class="biz-card"
+              data-cat="retail"
+              data-title="Premium Furniture Showroom"
+              data-location="Industrial Area"
+              data-est="2016"
+              data-staff="10 employees"
+              data-revenue="Ugx 10.2M/yr"
+              data-profit="Ugx 3.1M/yr"
+              data-price="Ugx 72,000,000"
+              data-orig=""
+              data-h1="Exclusive dealership agreements"
+              data-h2="Large showroom and warehouse"
+              data-h3="Strong online sales"
+              data-h4="Well-established customer base"
+              data-badge="featured"
+              data-badge-text="Featured"
+              data-rating="4.8"
+              data-reviews="67"
+            >
+              <div class="biz-thumb-wrap">
+                <img
+                  class="biz-thumb"
+                  src="https://picsum.photos/id/1060/400/300"
+                  alt="Furniture"
+                />
+              </div>
+
+              <div class="biz-title">Premium Furniture Showroom</div>
+
+              <div class="biz-provider">Industrial Area · Est. 2016</div>
+
+              <div class="biz-badges">
+                <span class="badge featured">Featured</span>
+                <span class="star-pill"><span class="s">★</span>4.8</span>
+                <span class="rev-pill">67 reviews</span>
+              </div>
+
+              <div class="biz-price">Ugx 72,000,000</div>
+            </div>
+            <div
+              class="biz-card"
+              data-cat="health"
+              data-title="Private Medical Clinic"
+              data-location="Kilimani, Nairobi"
+              data-est="2017"
+              data-staff="14 employees"
+              data-revenue="Ugx 12.4M/yr"
+              data-profit="Ugx 4.1M/yr"
+              data-price="Ugx 88,000,000"
+              data-orig=""
+              data-h1="Modern medical equipment included"
+              data-h2="Licensed and fully operational"
+              data-h3="Large database of recurring patients"
+              data-h4="Prime location with expansion potential"
+              data-badge="featured"
+              data-badge-text="Featured"
+              data-rating="4.9"
+              data-reviews="91"
+            >
+              <div class="biz-thumb-wrap">
+                <img
+                  class="biz-thumb"
+                  src="https://picsum.photos/id/433/400/300"
+                  alt="Medical Clinic"
+                />
+              </div>
+
+              <div class="biz-title">
+                Private Medical Clinic with Established Client Base
+              </div>
+
+              <div class="biz-provider">Kilimani · Est. 2017</div>
+
+              <div class="biz-badges">
+                <span class="badge featured">Featured</span>
+                <span class="star-pill"><span class="s">★</span>4.9</span>
+                <span class="rev-pill">91 reviews</span>
+              </div>
+
+              <div class="biz-price">Ugx 88,000,000</div>
+            </div>
+
+            <div
+              class="biz-card"
+              data-cat="manufacturing"
+              data-title="Bottled Water Manufacturing Company"
+              data-location="Nairobi"
+              data-est="2015"
+              data-staff="24 employees"
+              data-revenue="Ugx 48.2M/yr"
+              data-profit="Ugx 14.6M/yr"
+              data-price="Ugx 250,000,000"
+              data-orig=""
+              data-h1="Fully automated production line"
+              data-h2="Distribution contracts already secured"
+              data-h3="Recognized local brand"
+              data-h4="Huge opportunity for regional expansion"
+              data-badge="featured"
+              data-badge-text="Featured"
+              data-rating="4.8"
+              data-reviews="143"
+            >
+              <div class="biz-thumb-wrap">
+                <img
+                  class="biz-thumb"
+                  src="https://picsum.photos/id/26/400/300"
+                  alt="Manufacturing"
+                />
+              </div>
+
+              <div class="biz-title">Bottled Water Manufacturing Company</div>
+
+              <div class="biz-provider">Nairobi · Est. 2015</div>
+
+              <div class="biz-badges">
+                <span class="badge featured">Featured</span>
+                <span class="star-pill"><span class="s">★</span>4.8</span>
+                <span class="rev-pill">143 reviews</span>
+              </div>
+
+              <div class="biz-price">Ugx 250,000,000</div>
+            </div>
+
+            <div
+              class="biz-card"
+              data-cat="education"
+              data-title="International Kindergarten"
+              data-location="Lavington, Nairobi"
+              data-est="2014"
+              data-staff="20 employees"
+              data-revenue="Ugx 9.6M/yr"
+              data-profit="Ugx 3.4M/yr"
+              data-price="Ugx 65,000,000"
+              data-orig=""
+              data-h1="Fully licensed international curriculum"
+              data-h2="Over 180 enrolled students"
+              data-h3="Excellent parent satisfaction"
+              data-h4="Opportunity to expand into primary education"
+              data-badge="featured"
+              data-badge-text="Featured"
+              data-rating="4.9"
+              data-reviews="109"
+            >
+              <div class="biz-thumb-wrap">
+                <img
+                  class="biz-thumb"
+                  src="https://picsum.photos/id/20/400/300"
+                  alt="School"
+                />
+              </div>
+
+              <div class="biz-title">
+                International Kindergarten & Early Learning Centre
+              </div>
+
+              <div class="biz-provider">Lavington · Est. 2014</div>
+
+              <div class="biz-badges">
+                <span class="badge featured">Featured</span>
+                <span class="star-pill"><span class="s">★</span>4.9</span>
+                <span class="rev-pill">109 reviews</span>
+              </div>
+
+              <div class="biz-price">Ugx 65,000,000</div>
+            </div>
+          </div>
+        </div>
+
+        <button class="car-btn right" id="fbNext" onclick="carMove('fb', 1)">
+          &#8250;
+        </button>
+      </div>
+
+      <a href="#" class="show-all">Show all featured businesses →</a>
+    </div>
+
+    <div class="section" id="investment">
+      <div class="sec-hd"><h2>Investment Opportunities</h2></div>
+      <p class="sec-sub">
+        High-potential businesses offering excellent returns on investment
+      </p>
+
+      <div class="carousel-outer" id="ioOuter">
+        <button class="car-btn left" id="ioPrev" onclick="carMove('io', -1)">
+          &#8249;
+        </button>
+
+        <div class="carousel-track-clip">
+          <div class="carousel-track" id="ioTrack">
+            <div
+              class="biz-card"
+              data-cat="tech"
+              data-title="AI Customer Support Platform"
+              data-location="Online"
+              data-est="2022"
+              data-staff="8 employees"
+              data-revenue="Ugx 18.5M/yr"
+              data-profit="Ugx 7.4M/yr"
+              data-price="Ugx 120,000,000"
+              data-orig=""
+              data-h1="Growing Monthly Recurring Revenue by 12%"
+              data-h2="500+ active business subscribers"
+              data-h3="Recurring SaaS subscription model"
+              data-h4="Huge international expansion opportunity"
+              data-badge="hot"
+              data-badge-text="Investment"
+              data-rating="4.9"
+              data-reviews="74"
+            >
+              <div class="biz-thumb-wrap">
+                <img
+                  class="biz-thumb"
+                  src="https://picsum.photos/id/3/400/300"
+                  alt="AI Platform"
+                />
+              </div>
+
+              <div class="biz-title">AI Customer Support SaaS Platform</div>
+
+              <div class="biz-provider">Online · Est. 2022</div>
+
+              <div class="biz-badges">
+                <span class="badge hot">Investment</span>
+                <span class="star-pill"><span class="s">★</span>4.9</span>
+                <span class="rev-pill">74 reviews</span>
+              </div>
+
+              <div class="biz-price">Ugx 120,000,000</div>
+            </div>
+
+            <div
+              class="biz-card"
+              data-cat="manufacturing"
+              data-title="Organic Food Processing Company"
+              data-location="Nairobi"
+              data-est="2018"
+              data-staff="22 employees"
+              data-revenue="Ugx 26.8M/yr"
+              data-profit="Ugx 9.2M/yr"
+              data-price="Ugx 165,000,000"
+              data-orig=""
+              data-h1="Rapidly expanding wholesale contracts"
+              data-h2="Modern production facility included"
+              data-h3="Recognized organic certification"
+              data-h4="Strong export opportunities"
+              data-badge="hot"
+              data-badge-text="Investment"
+              data-rating="4.8"
+              data-reviews="58"
+            >
+              <div class="biz-thumb-wrap">
+                <img
+                  class="biz-thumb"
+                  src="https://picsum.photos/id/292/400/300"
+                  alt="Food Processing"
+                />
+              </div>
+
+              <div class="biz-title">Organic Food Processing Company</div>
+
+              <div class="biz-provider">Nairobi · Est. 2018</div>
+
+              <div class="biz-badges">
+                <span class="badge hot">Investment</span>
+                <span class="star-pill"><span class="s">★</span>4.8</span>
+                <span class="rev-pill">58 reviews</span>
+              </div>
+
+              <div class="biz-price">Ugx 165,000,000</div>
+            </div>
+
+            <div
+              class="biz-card"
+              data-cat="health"
+              data-title="Specialized Dental Clinic"
+              data-location="Westlands"
+              data-est="2019"
+              data-staff="11 employees"
+              data-revenue="Ugx 11.6M/yr"
+              data-profit="Ugx 4.8M/yr"
+              data-price="Ugx 82,000,000"
+              data-orig=""
+              data-h1="Modern equipment included"
+              data-h2="Recurring patient appointments"
+              data-h3="Prime commercial location"
+              data-h4="Expansion space available"
+              data-badge="hot"
+              data-badge-text="Investment"
+              data-rating="4.9"
+              data-reviews="63"
+            >
+              <div class="biz-thumb-wrap">
+                <img
+                  class="biz-thumb"
+                  src="https://picsum.photos/id/433/400/300"
+                  alt="Dental Clinic"
+                />
+              </div>
+
+              <div class="biz-title">Specialized Dental Clinic</div>
+
+              <div class="biz-provider">Westlands · Est. 2019</div>
+
+              <div class="biz-badges">
+                <span class="badge hot">Investment</span>
+                <span class="star-pill"><span class="s">★</span>4.9</span>
+                <span class="rev-pill">63 reviews</span>
+              </div>
+
+              <div class="biz-price">Ugx 82,000,000</div>
+            </div>
+
+            <div
+              class="biz-card"
+              data-cat="retail"
+              data-title="Premium Fashion Brand"
+              data-location="Online & Nairobi"
+              data-est="2020"
+              data-staff="7 employees"
+              data-revenue="Ugx 9.8M/yr"
+              data-profit="Ugx 3.6M/yr"
+              data-price="Ugx 58,000,000"
+              data-orig=""
+              data-h1="Strong online brand presence"
+              data-h2="International shipping enabled"
+              data-h3="Growing customer database"
+              data-h4="Excellent profit margins"
+              data-badge="hot"
+              data-badge-text="Investment"
+              data-rating="4.7"
+              data-reviews="47"
+            >
+              <div class="biz-thumb-wrap">
+                <img
+                  class="biz-thumb"
+                  src="https://picsum.photos/id/1060/400/300"
+                  alt="Fashion Brand"
+                />
+              </div>
+
+              <div class="biz-title">Premium Fashion & Lifestyle Brand</div>
+
+              <div class="biz-provider">Online · Est. 2020</div>
+
+              <div class="biz-badges">
+                <span class="badge hot">Investment</span>
+                <span class="star-pill"><span class="s">★</span>4.7</span>
+                <span class="rev-pill">47 reviews</span>
+              </div>
+
+              <div class="biz-price">Ugx 58,000,000</div>
+            </div>
+
+            <div
+              class="biz-card"
+              data-cat="education"
+              data-title="Private Training Institute"
+              data-location="Nairobi CBD"
+              data-est="2016"
+              data-staff="15 employees"
+              data-revenue="Ugx 13.4M/yr"
+              data-profit="Ugx 5.5M/yr"
+              data-price="Ugx 90,000,000"
+              data-orig=""
+              data-h1="Thousands of alumni"
+              data-h2="Accredited professional programs"
+              data-h3="Corporate partnerships"
+              data-h4="Hybrid online learning platform"
+              data-badge="hot"
+              data-badge-text="Investment"
+              data-rating="4.8"
+              data-reviews="81"
+            >
+              <div class="biz-thumb-wrap">
+                <img
+                  class="biz-thumb"
+                  src="https://picsum.photos/id/20/400/300"
+                  alt="Training Institute"
+                />
+              </div>
+
+              <div class="biz-title">Accredited Private Training Institute</div>
+
+              <div class="biz-provider">Nairobi CBD · Est. 2016</div>
+
+              <div class="biz-badges">
+                <span class="badge hot">Investment</span>
+                <span class="star-pill"><span class="s">★</span>4.8</span>
+                <span class="rev-pill">81 reviews</span>
+              </div>
+
+              <div class="biz-price">Ugx 90,000,000</div>
+            </div>
+
+            <div
+              class="biz-card"
+              data-cat="services"
+              data-title="Commercial Cleaning Company"
+              data-location="Nairobi"
+              data-est="2017"
+              data-staff="35 employees"
+              data-revenue="Ugx 17.2M/yr"
+              data-profit="Ugx 6.3M/yr"
+              data-price="Ugx 110,000,000"
+              data-orig=""
+              data-h1="Long-term corporate contracts"
+              data-h2="Experienced management team"
+              data-h3="Fleet and equipment included"
+              data-h4="Consistent year-on-year growth"
+              data-badge="hot"
+              data-badge-text="Investment"
+              data-rating="4.8"
+              data-reviews="92"
+            >
+              <div class="biz-thumb-wrap">
+                <img
+                  class="biz-thumb"
+                  src="https://picsum.photos/id/1011/400/300"
+                  alt="Cleaning Company"
+                />
+              </div>
+
+              <div class="biz-title">Commercial Cleaning Company</div>
+
+              <div class="biz-provider">Nairobi · Est. 2017</div>
+
+              <div class="biz-badges">
+                <span class="badge hot">Investment</span>
+                <span class="star-pill"><span class="s">★</span>4.8</span>
+                <span class="rev-pill">92 reviews</span>
+              </div>
+
+              <div class="biz-price">Ugx 110,000,000</div>
+            </div>
+          </div>
+        </div>
+
+        <button class="car-btn right" id="ioNext" onclick="carMove('io', 1)">
+          &#8250;
+        </button>
+      </div>
+
+      <a href="#" class="show-all">Show all investment opportunities →</a>
+    </div>
+
+    <div class="section" id="our-businesses">
+      <div class="sec-hd"><h2>Our Businesses</h2></div>
+      <p class="sec-sub">
+        Trusted businesses exclusively represented by BizMall
+      </p>
+
+      <div class="carousel-outer" id="obOuter">
+        <button class="car-btn left" id="obPrev" onclick="carMove('ob', -1)">
+          &#8249;
+        </button>
+
+        <div class="carousel-track-clip">
+          <div class="carousel-track" id="obTrack">
+            <div
+              class="biz-card"
+              data-cat="retail"
+              data-title="Premium Electronics Store"
+              data-location="Nairobi CBD"
+              data-est="2016"
+              data-staff="12 employees"
+              data-revenue="Ugx 21.6M/yr"
+              data-profit="Ugx 6.8M/yr"
+              data-price="Ugx 135,000,000"
+              data-orig=""
+              data-h1="Exclusive listing managed by BizMall"
+              data-h2="Authorized distributor for major brands"
+              data-h3="Excellent customer loyalty and repeat sales"
+              data-h4="Fully operational with trained staff"
+              data-badge="featured"
+              data-badge-text="BizMall Exclusive"
+              data-rating="4.9"
+              data-reviews="115"
+            >
+              <div class="biz-thumb-wrap">
+                <img
+                  class="biz-thumb"
+                  src="https://picsum.photos/id/201/400/300"
+                  alt="Electronics Store"
+                />
+              </div>
+
+              <div class="biz-title">Premium Electronics & Gadgets Store</div>
+
+              <div class="biz-provider">Nairobi CBD · Est. 2016</div>
+
+              <div class="biz-badges">
+                <span class="badge featured">BizMall Exclusive</span>
+                <span class="star-pill"><span class="s">★</span>4.9</span>
+                <span class="rev-pill">115 reviews</span>
+              </div>
+
+              <div class="biz-price">Ugx 135,000,000</div>
+            </div>
+
+            <div
+              class="biz-card"
+              data-cat="food"
+              data-title="Successful Bakery & Café"
+              data-location="Westlands"
+              data-est="2018"
+              data-staff="15 employees"
+              data-revenue="Ugx 12.8M/yr"
+              data-profit="Ugx 4.3M/yr"
+              data-price="Ugx 84,000,000"
+              data-orig=""
+              data-h1="Daily walk-in customers exceeding 400"
+              data-h2="Complete baking equipment included"
+              data-h3="Strong catering contracts"
+              data-h4="Prime shopping centre location"
+              data-badge="featured"
+              data-badge-text="BizMall Exclusive"
+              data-rating="4.8"
+              data-reviews="96"
+            >
+              <div class="biz-thumb-wrap">
+                <img
+                  class="biz-thumb"
+                  src="https://picsum.photos/id/431/400/300"
+                  alt="Bakery"
+                />
+              </div>
+
+              <div class="biz-title">Successful Bakery & Café</div>
+
+              <div class="biz-provider">Westlands · Est. 2018</div>
+
+              <div class="biz-badges">
+                <span class="badge featured">BizMall Exclusive</span>
+                <span class="star-pill"><span class="s">★</span>4.8</span>
+                <span class="rev-pill">96 reviews</span>
+              </div>
+
+              <div class="biz-price">Ugx 84,000,000</div>
+            </div>
+
+            <div
+              class="biz-card"
+              data-cat="services"
+              data-title="Digital Marketing Agency"
+              data-location="Online"
+              data-est="2019"
+              data-staff="10 employees"
+              data-revenue="Ugx 14.9M/yr"
+              data-profit="Ugx 5.9M/yr"
+              data-price="Ugx 98,000,000"
+              data-orig=""
+              data-h1="Over 150 active monthly clients"
+              data-h2="Recurring retainer contracts"
+              data-h3="Experienced creative team"
+              data-h4="Strong international client base"
+              data-badge="featured"
+              data-badge-text="BizMall Exclusive"
+              data-rating="5.0"
+              data-reviews="88"
+            >
+              <div class="biz-thumb-wrap">
+                <img
+                  class="biz-thumb"
+                  src="https://picsum.photos/id/180/400/300"
+                  alt="Marketing Agency"
+                />
+              </div>
+
+              <div class="biz-title">Digital Marketing Agency</div>
+
+              <div class="biz-provider">Online · Est. 2019</div>
+
+              <div class="biz-badges">
+                <span class="badge featured">BizMall Exclusive</span>
+                <span class="star-pill"><span class="s">★</span>5.0</span>
+                <span class="rev-pill">88 reviews</span>
+              </div>
+
+              <div class="biz-price">Ugx 98,000,000</div>
+            </div>
+
+            <div
+              class="biz-card"
+              data-cat="manufacturing"
+              data-title="Furniture Manufacturing Workshop"
+              data-location="Industrial Area"
+              data-est="2015"
+              data-staff="20 employees"
+              data-revenue="Ugx 24.1M/yr"
+              data-profit="Ugx 8.6M/yr"
+              data-price="Ugx 155,000,000"
+              data-orig=""
+              data-h1="Modern woodworking machinery included"
+              data-h2="Large commercial client portfolio"
+              data-h3="Experienced production staff"
+              data-h4="Strong profit margins"
+              data-badge="featured"
+              data-badge-text="BizMall Exclusive"
+              data-rating="4.8"
+              data-reviews="102"
+            >
+              <div class="biz-thumb-wrap">
+                <img
+                  class="biz-thumb"
+                  src="https://picsum.photos/id/1060/400/300"
+                  alt="Furniture Factory"
+                />
+              </div>
+
+              <div class="biz-title">Furniture Manufacturing Workshop</div>
+
+              <div class="biz-provider">Industrial Area · Est. 2015</div>
+
+              <div class="biz-badges">
+                <span class="badge featured">BizMall Exclusive</span>
+                <span class="star-pill"><span class="s">★</span>4.8</span>
+                <span class="rev-pill">102 reviews</span>
+              </div>
+
+              <div class="biz-price">Ugx 155,000,000</div>
+            </div>
+
+            <div
+              class="biz-card"
+              data-cat="health"
+              data-title="Modern Fitness Centre"
+              data-location="Kilimani"
+              data-est="2020"
+              data-staff="14 employees"
+              data-revenue="Ugx 11.2M/yr"
+              data-profit="Ugx 4.4M/yr"
+              data-price="Ugx 78,000,000"
+              data-orig=""
+              data-h1="Over 800 active members"
+              data-h2="Premium gym equipment included"
+              data-h3="Recurring membership subscriptions"
+              data-h4="Personal training services available"
+              data-badge="featured"
+              data-badge-text="BizMall Exclusive"
+              data-rating="4.9"
+              data-reviews="133"
+            >
+              <div class="biz-thumb-wrap">
+                <img
+                  class="biz-thumb"
+                  src="https://picsum.photos/id/433/400/300"
+                  alt="Gym"
+                />
+              </div>
+
+              <div class="biz-title">Modern Fitness Centre</div>
+
+              <div class="biz-provider">Kilimani · Est. 2020</div>
+
+              <div class="biz-badges">
+                <span class="badge featured">BizMall Exclusive</span>
+                <span class="star-pill"><span class="s">★</span>4.9</span>
+                <span class="rev-pill">133 reviews</span>
+              </div>
+
+              <div class="biz-price">Ugx 78,000,000</div>
+            </div>
+
+            <div
+              class="biz-card"
+              data-cat="tech"
+              data-title="Established IT Solutions Company"
+              data-location="Nairobi"
+              data-est="2017"
+              data-staff="16 employees"
+              data-revenue="Ugx 28.5M/yr"
+              data-profit="Ugx 10.4M/yr"
+              data-price="Ugx 185,000,000"
+              data-orig=""
+              data-h1="Corporate contracts with leading companies"
+              data-h2="Recurring managed IT services"
+              data-h3="Highly experienced technical team"
+              data-h4="Strong year-on-year revenue growth"
+              data-badge="featured"
+              data-badge-text="BizMall Exclusive"
+              data-rating="5.0"
+              data-reviews="149"
+            >
+              <div class="biz-thumb-wrap">
+                <img
+                  class="biz-thumb"
+                  src="https://picsum.photos/id/48/400/300"
+                  alt="IT Company"
+                />
+              </div>
+
+              <div class="biz-title">Established IT Solutions Company</div>
+
+              <div class="biz-provider">Nairobi · Est. 2017</div>
+
+              <div class="biz-badges">
+                <span class="badge featured">BizMall Exclusive</span>
+                <span class="star-pill"><span class="s">★</span>5.0</span>
+                <span class="rev-pill">149 reviews</span>
+              </div>
+
+              <div class="biz-price">Ugx 185,000,000</div>
+            </div>
+          </div>
+        </div>
+
+        <button class="car-btn right" id="obNext" onclick="carMove('ob', 1)">
+          &#8250;
+        </button>
+      </div>
+
+      <a href="#" class="show-all">Show all our businesses →</a>
+    </div>
+
+    <!-- WHY CHOOSE US -->
+    <div class="section" id="why-us">
+      <div class="sec-hd">
+        <h2>Why Choose Us</h2>
+      </div>
+
+      <p class="sec-sub">
+        Here's why thousands of buyers and sellers trust BizMall.
+      </p>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>Verified Business Listings</span>
+            <span class="arrow">▼</span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Every business listed on BizMall is carefully reviewed to improve
+              accuracy and help buyers make informed decisions.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>Trusted Buyers & Sellers</span>
+            <span class="arrow">▼</span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              We connect genuine buyers with serious business owners, creating a
+              safer and more reliable marketplace.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>Confidential & Secure</span>
+            <span class="arrow">▼</span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Your sensitive business information stays private until you're
+              ready to share it with qualified buyers.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>Expert Support</span>
+            <span class="arrow">▼</span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Our experienced team is available to guide you throughout the
+              buying and selling journey.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>Simple & Fast Process</span>
+            <span class="arrow">▼</span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              From listing your business to finding the perfect buyer, BizMall
+              makes the entire process quick and easy.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BANNER -->
+    <div class="banner">
+      <h2>Ready to sell your business?</h2>
+      <p>Get in front of thousands of active buyers searching right now.</p>
+      <a href="#contact" class="btn btn-purple">Get started — it's free</a>
+    </div>
+
+    <!-- CONTACT FORM -->
+    <section id="contact">
+      <div class="contact-box">
+        <h2>Contact us</h2>
+        <p class="sub">
+          Have a question about buying or selling? Our team will get back to
+          you.
+        </p>
+        <form
+          onsubmit="
+            event.preventDefault();
+            this.innerHTML =
+              '<p style=\'color:green;font-weight:700;padding:24px 0\'>✓ Message sent! We\'ll be in touch shortly.</p>';
+          "
+        >
+          <div class="fgrid">
+            <div class="frow">
+              <label>First name</label><input type="text" required />
+            </div>
+            <div class="frow">
+              <label>Last name</label><input type="text" required />
+            </div>
+          </div>
+          <div class="frow">
+            <label>Email address</label><input type="email" required />
+          </div>
+          <div class="frow">
+            <label>Phone number</label><input type="tel" />
+          </div>
+          <div class="frow">
+            <label>I'm contacting about</label>
+            <select>
+              <option>Buying a business</option>
+              <option>Selling a business</option>
+              <option>Listing pricing</option>
+              <option>General enquiry</option>
+            </select>
+          </div>
+          <div class="frow">
+            <label>Message</label><textarea required></textarea>
+          </div>
+          <button
+            type="submit"
+            class="btn btn-purple"
+            style="width: 100%; padding: 13px; font-size: 16px"
+          >
+            Send message
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="foot-grid">
+        <div>
+          <h4>BizMall</h4>
+          <ul>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Buyers</h4>
+          <ul>
+            <li><a href="#listings">New listings</a></li>
+            <li><a href="#featured">Featured business</a></li>
+            <li><a href="#">How to buy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Sellers</h4>
+          <ul>
+            <li><a href="#">List your business</a></li>
+            <li><a href="#">Pricing plans</a></li>
+            <li><a href="#">Seller resources</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Terms of use</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 BizMall. All rights reserved.</span>
+        <span>Built for buyers & sellers everywhere.</span>
+      </div>
+    </footer>
+
+    <script>
+      // ── HERO SLIDESHOW ──────────────────────────
+      let heroIdx = 0;
+      const heroSlides = document.querySelectorAll(".slide");
+      const dotsWrap = document.getElementById("heroDots");
+      heroSlides.forEach((_, i) => {
+        const d = document.createElement("button");
+        if (i === 0) d.classList.add("on");
+        d.onclick = () => {
+          heroIdx = i;
+          showHero();
+        };
+        dotsWrap.appendChild(d);
+      });
+      function showHero() {
+        heroSlides.forEach((s) => s.classList.remove("active"));
+        dotsWrap
+          .querySelectorAll("button")
+          .forEach((d) => d.classList.remove("on"));
+        heroSlides[heroIdx].classList.add("active");
+        dotsWrap.querySelectorAll("button")[heroIdx].classList.add("on");
+      }
+      function heroSlide(dir) {
+        heroIdx = (heroIdx + dir + heroSlides.length) % heroSlides.length;
+        showHero();
+      }
+      setInterval(() => heroSlide(1), 5000);
+
+      // ── CAROUSELS ───────────────────────────────
+      const carState = {};
+
+      function initCar(id) {
+        const track = document.getElementById(id + "Track");
+        const cards = Array.from(track.querySelectorAll(".biz-card"));
+        carState[id] = { pos: 0, visible: getVisible(), total: cards.length };
+        updateCarBtns(id);
+      }
+
+      function getVisible() {
+        return window.innerWidth < 700 ? 2 : window.innerWidth < 1100 ? 3 : 4;
+      }
+
+      // function carMove(id, dir) {
+      //   const st = carState[id];
+      //   const visible = getVisible();
+      //   const track = document.getElementById(id + "Track");
+      //   const cards = Array.from(
+      //     track.querySelectorAll('.biz-card:not([style*="none"])'),
+      //   );
+      //   const maxPos = Math.max(0, cards.length - visible);
+      //   st.pos = Math.max(0, Math.min(st.pos + dir, maxPos));
+      //   applyCarTransform(id, cards);
+      //   updateCarBtns(id);
+      // }
+
+      function carMove(id, dir) {
+        const st = carState[id];
+        const visible = getVisible();
+
+        const track = document.getElementById(id + "Track");
+        const cards = Array.from(track.querySelectorAll(".biz-card")).filter(
+          (card) => getComputedStyle(card).display !== "none",
+        );
+
+        const maxPos = Math.max(0, cards.length - visible);
+
+        st.pos = Math.min(maxPos, Math.max(0, st.pos + dir));
+
+        applyCarTransform(id, cards);
+        updateCarBtns(id);
+      }
+
+      function applyCarTransform(id, cards) {
+        const track = document.getElementById(id + "Track");
+        const st = carState[id];
+
+        if (!cards) {
+          cards = Array.from(
+            track.querySelectorAll('.biz-card:not([style*="none"])'),
+          );
+        }
+
+        if (!cards.length) return;
+
+        // Measure the real distance between cards
+        const first = cards[0];
+        const second = cards[1];
+
+        let step = first.offsetWidth;
+
+        if (second) {
+          step = second.offsetLeft - first.offsetLeft;
+        }
+
+        track.style.transform = `translateX(-${st.pos * step}px)`;
+      }
+
+      // function updateCarBtns(id) {
+      //   const st = carState[id];
+      //   const visible = getVisible();
+      //   const track = document.getElementById(id + "Track");
+      //   const cards = Array.from(
+      //     track.querySelectorAll('.biz-card:not([style*="none"])'),
+      //   );
+      //   const maxPos = Math.max(0, cards.length - visible);
+      //   document.getElementById(id + "Prev").disabled = st.pos <= 0;
+      //   document.getElementById(id + "Next").disabled = st.pos >= maxPos;
+      // }
+
+      function updateCarBtns(id) {
+        const st = carState[id];
+        const visible = getVisible();
+
+        const track = document.getElementById(id + "Track");
+        const cards = Array.from(track.querySelectorAll(".biz-card")).filter(
+          (card) => getComputedStyle(card).display !== "none",
+        );
+
+        const maxPos = Math.max(0, cards.length - visible);
+
+        document.getElementById(id + "Prev").disabled = st.pos === 0;
+        document.getElementById(id + "Next").disabled = st.pos >= maxPos;
+      }
+
+      // ── TAB FILTERING ───────────────────────────
+      function setupTabs(tabsId, carId) {
+        const tabs = document.querySelectorAll("#" + tabsId + " button");
+        const track = document.getElementById(carId + "Track");
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            tabs.forEach((t) => t.classList.remove("on"));
+            tab.classList.add("on");
+            const cat = tab.dataset.cat;
+            Array.from(track.querySelectorAll(".biz-card")).forEach((card) => {
+              card.style.display =
+                cat === "all" || card.dataset.cat === cat ? "" : "none";
+            });
+            carState[carId].pos = 0;
+            track.style.transform = "translateX(0)";
+            updateCarBtns(carId);
+          });
+        });
+      }
+
+      // ── CONTACT NAV BUTTON ───────────────────────
+      document
+        .getElementById("contactBtn")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          document
+            .getElementById("contact")
+            .scrollIntoView({ behavior: "smooth" });
+        });
+
+      // ── HAMBURGER ────────────────────────────────
+      const hamburger = document.getElementById("hamburger");
+      const mobileNav = document.getElementById("mobileNav");
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("open");
+        mobileNav.classList.toggle("open");
+        document.body.style.overflow = mobileNav.classList.contains("open")
+          ? "hidden"
+          : "";
+      });
+      function closeMobileNav() {
+        hamburger.classList.remove("open");
+        mobileNav.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+
+      // ── HOVER POPUP ──────────────────────────────
+      const popup = document.createElement("div");
+      popup.className = "popup";
+      popup.innerHTML = `
+  <div class="popup-title" id="pt"></div>
+  <div class="popup-updated" id="pu"></div>
+  <div class="popup-badges" id="pb"></div>
+  <ul class="popup-highlights" id="ph"></ul>
+  <div class="popup-stats" id="ps"></div>
+  <div id="pp"></div>
+  <button class="popup-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});hidePopup();">Contact us about this business</button>
+`;
+      document.body.appendChild(popup);
+
+      let popupTimer = null;
+      let activeCard = null;
+
+      function showPopup(card) {
+        console.log("showPopup", card);
+        const d = card.dataset;
+        document.getElementById("pt").textContent = d.title;
+        document.getElementById("pu").textContent =
+          `📍 ${d.location} · Est. ${d.est} · ${d.staff}`;
+
+        // badges
+        const badgeClass = d.badge === "hot" ? "hot" : "";
+        document.getElementById("pb").innerHTML = `
+    <span class="badge ${badgeClass}">${d.badgeText}</span>
+    <span class="star-pill"><span class="s">★</span>${d.rating}</span>
+    <span class="rev-pill">${d.reviews} reviews</span>`;
+
+        // highlights
+        document.getElementById("ph").innerHTML = [d.h1, d.h2, d.h3, d.h4]
+          .map((h) => `<li>${h}</li>`)
+          .join("");
+
+        // stats
+        document.getElementById("ps").innerHTML = `
+    <div><div class="popup-stat-label">Annual Revenue</div><div class="popup-stat-value">${d.revenue}</div></div>
+    <div><div class="popup-stat-label">Net Profit</div><div class="popup-stat-value">${d.profit}</div></div>`;
+
+        // price
+        const priceEl = document.getElementById("pp");
+        if (d.price) {
+          priceEl.innerHTML = `<div class="popup-price-row">
+      <span class="popup-price">${d.price}</span>
+      ${d.orig ? `<span class="popup-orig">${d.orig}</span>` : ""}
+    </div>`;
+        } else {
+          priceEl.innerHTML = `<p class="popup-no-price">Price on enquiry</p>`;
+        }
+
+        // position popup
+        popup.className = "popup";
+        popup.style.visibility = "hidden";
+        popup.style.display = "block";
+
+        const rect = card.getBoundingClientRect();
+
+        const popW = 320;
+        const margin = 12;
+
+        popup.style.display = "block";
+        popup.style.visibility = "hidden";
+
+        const popH = popup.offsetHeight;
+
+        let left;
+        let top = rect.top + (rect.height - popH) / 2;
+
+        const spaceRight = window.innerWidth - rect.right;
+        const spaceLeft = rect.left;
+
+        if (spaceRight >= popW + margin) {
+          left = rect.right + margin;
+          popup.classList.add("pop-right");
+        } else if (spaceLeft >= popW + margin) {
+          left = rect.left - popW - margin;
+          popup.classList.add("pop-left");
+        } else {
+          left = Math.max(10, rect.left - (popW - rect.width) / 2);
+        }
+
+        top = Math.max(10, Math.min(top, window.innerHeight - popH - 10));
+
+        popup.style.left = `${left}px`;
+        popup.style.top = `${top}px`;
+
+        popup.style.visibility = "visible";
+        popup.classList.add("visible");
+      }
+
+      function hidePopup() {
+        popup.classList.remove("visible");
+        popup.style.display = "none";
+      }
+
+      document.querySelectorAll(".biz-card").forEach((card) => {
+        card.addEventListener("mouseenter", () => {
+          if (window.innerWidth <= 900) return;
+          activeCard = card;
+          popupTimer = setTimeout(() => showPopup(card), 300);
+        });
+        card.addEventListener("mouseleave", (e) => {
+          clearTimeout(popupTimer);
+          // only hide if not moving into popup
+          const rel = e.relatedTarget;
+          if (!popup.contains(rel)) hidePopup();
+        });
+      });
+
+      popup.addEventListener("mouseleave", () => hidePopup());
+      document.addEventListener("scroll", () => hidePopup(), { passive: true });
+
+      // ── INIT ─────────────────────────────────────
+      window.addEventListener("load", () => {
+        initCar("nl");
+        initCar("fb");
+        initCar("io");
+        initCar("ob");
+        // setupTabs("nlTabs", "nl");
+        // setupTabs("fbTabs", "fb");
+      });
+      window.addEventListener("resize", () => {
+        ["nl", "fb", "io", "ob"].forEach((id) => {
+          if (carState[id]) {
+            carState[id].pos = 0;
+            document.getElementById(id + "Track").style.transform =
+              "translateX(0)";
+            updateCarBtns(id);
+          }
+        });
+      });
+
+      document.querySelectorAll(".accordion-header").forEach((header) => {
+        header.addEventListener("click", () => {
+          const item = header.parentElement;
+
+          item.classList.toggle("active");
+
+          const content = item.querySelector(".accordion-content");
+
+          if (item.classList.contains("active")) {
+            content.style.maxHeight = content.scrollHeight + "px";
+          } else {
+            content.style.maxHeight = "0";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
