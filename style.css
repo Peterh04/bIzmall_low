@@ -877,6 +877,97 @@ footer {
   letter-spacing: 1px;
 }
 
+.trusted {
+  background: #f4f5f7;
+  padding: 60px 60px 70px;
+  font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+  text-align: center;
+}
+
+.trusted__heading {
+  margin: 0 0 45px;
+  font-size: 19px;
+  color: #4b4f63;
+  font-weight: 500;
+}
+
+.trusted__logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px 30px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.trusted__logo {
+  flex: 1 1 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+}
+
+.trusted__logo img {
+  max-width: 130px;
+  max-height: 40px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+
+  /* Grayscale look like the reference — remove this rule if your logos are already monochrome */
+  filter: grayscale(100%);
+  opacity: 0.75;
+  transition:
+    opacity 0.25s ease,
+    filter 0.25s ease;
+}
+
+.trusted__logo img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .trusted {
+    padding: 50px 30px 60px;
+  }
+  .trusted__heading {
+    font-size: 17px;
+    margin-bottom: 35px;
+  }
+  .trusted__logos {
+    gap: 30px 24px;
+  }
+  .trusted__logo {
+    flex: 1 1 100px;
+  }
+  .trusted__logo img {
+    max-width: 100px;
+    max-height: 32px;
+  }
+}
+
+@media (max-width: 560px) {
+  .trusted__heading {
+    font-size: 15px;
+    padding: 0 10px;
+  }
+  .trusted__logos {
+    justify-content: center;
+    gap: 26px 20px;
+  }
+  .trusted__logo {
+    flex: 0 1 40%;
+  }
+  .trusted__logo img {
+    max-width: 90px;
+    max-height: 28px;
+  }
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .hero {
